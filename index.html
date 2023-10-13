@@ -30,11 +30,11 @@
       </div>
       <div id="prompt1" class="prompts">
         <h3>How many characters do you want in your password?</h3>
-        <p>Choose a length of at least 8 characters and at most 128 characters.<p>
-          <input type="text" id="length" name="length">
+        <p>Choose a password length of at least 8 characters and at most 128 characters.<p>
+          <input type="number" id="length" name="length" min="8" max="128" placeholder="Password Length"/>
     </div>
     <div id="prompt2" class="prompts">
-      <h3>Select the character types to include in your password.</h3>
+      <h3>Select the character types to include in your password:</h3>
       <div>
         <label>
           <input type="checkbox" id="lowercase" name="characters" value="lowercase"/> Lowercase
