@@ -28,27 +28,28 @@
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
-      <div id="prompt1" class="prompts">
+      <div id="prompt" class="prompts" style="display: none;">
         <h3>How many characters do you want in your password?</h3>
         <p>Choose a password length of at least 8 characters and at most 128 characters.<p>
-          <input type="number" id="length" name="length" min="8" max="128" placeholder="Password Length"/>
-          <input type="submit">
+          <input type="number" id="length" min="8" max="128" placeholder="Password Length"/>
+          <button id="submit" class="btn2">Submit</button>
+          <!-- <input type="submit"> -->
     </div>
-    <div id="prompt2" class="prompts">
+    <div id="prompt2" class="prompts" style="display: none;">
       <h3>Select the character types to include in your password:</h3>
       <div>
         <label>
-          <input type="checkbox" id="lowercase" name="characters" value="lowercase"/> Lowercase
+          <input type="checkbox" id="lowercase" value="lowercase"/> Lowercase letters
         </label>
       </div>
       <div>
         <label>
-          <input type="checkbox" id="uppercase" name="characters" value="uppercase"/> Uppercase
+          <input type="checkbox" id="uppercase" value="uppercase"/> Uppercase letters
         </label>
       </div>
       <div>
         <label>
-          <input type="checkbox" id="numeric" name="characters" value="numeric"/> Numbers
+          <input type="checkbox" id="numeric" value="numeric"/> Numbers
         </label>
       </div>
       <div>
@@ -56,7 +57,9 @@
           <input type="checkbox" id="special" name="characters" value="special"/> Special Characters
         </label>
       </div>
-      <input type="submit">
+      <button id="submit2" class="btn2">Submit</button>
+
+      <!-- <input type="submit"> -->
   </div>
 
     </div>
