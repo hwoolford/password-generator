@@ -31,8 +31,10 @@
       <div id="prompt" class="prompts" style="display: none;">
         <h3>How many characters do you want in your password?</h3>
         <p>Choose a password length of at least 8 characters and at most 128 characters.<p>
-          <input type="number" id="length" min="8" max="128" placeholder="Password Length"/>
+          <form action="" id="lengthForm">
+          <input type="number" id="lengthValue" required min="8" max="128" placeholder="Password Length"/>
           <button id="submit" class="btn2">Submit</button>
+        </form>
       </div>
     <div id="prompt2" class="prompts" style="display: none;">
       <h3>Select the character types to include in your password:</h3>
