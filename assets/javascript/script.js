@@ -7,12 +7,67 @@ generateBtn.addEventListener("click", () => {
   getPrompt1.style.display = "block"
 })
 
-// prompt2 is hidden until submit button is clicked
+//Character length validation (not working)
+// function validLength() {
+//   const passLength = document.getElementById("length").value
+//   if (passLength > 128 || passLength < 8) {
+// alert("Please choose a length of at least 8 charactors or at most 128 characters");
+// document.getElementById("length").focus();
+// return false;
+//   }
+//   }
+
+// const submitBtn = document.querySelector("#submit");
+// const getPrompt2 = document.querySelector("#prompt2");
+// const passLength = document.getElementById("length").value;
+
+// submitBtn.addEventListener("click", () => {
+//     if (passLength > 128 || passLength < 8) {
+// alert("Please choose a length of at least 8 charactors or at most 128 characters");
+//   } else {
+//     getPrompt2.style.display = "block";
+//   }
+// })
+
 const submitBtn = document.querySelector("#submit");
 const getPrompt2 = document.querySelector("#prompt2");
+const passLength = document.getElementById("length").value;
 submitBtn.addEventListener("click", () => {
-  getPrompt2.style.display = "block"
-})
+    if (passLength > 128 || passLength < 8) {
+alert("Please choose a length of at least 8 characters or at most 128 characters");
+return false;
+  } else if (passLength >= 8 && passLength <= 128) {
+    getPrompt2.style.display = "block";
+  }
+  })
+
+
+
+// const submitBtn = document.querySelector("#submit");
+// const getPrompt2 = document.querySelector("#prompt2");
+// const passLength = document.getElementById("length").value;
+// submitBtn.addEventListener("click", () => {
+//   function validLength() {
+//     if (passLength > 128 || passLength < 8) {
+// alert("Please choose a length of at least 8 charactors or at most 128 characters");
+//   } else {
+//     getPrompt2.style.display = "block";
+//   }
+// }
+// })
+// console.log(validLength)
+
+
+
+
+// prompt2 is hidden until submit button is clicked
+// const submitBtn = document.querySelector("#submit");
+// const getPrompt2 = document.querySelector("#prompt2");
+// submitBtn.addEventListener("click", () => {
+//   getPrompt2.style.display = "block"
+// })
+
+
 
 
 // Get references to the #generate element
