@@ -1,4 +1,7 @@
 // Assignment code here
+var passwordLength = 8;
+var combinedArrays = []
+
 const digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 const lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -7,62 +10,51 @@ const upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 
 const special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
-const generateBtn = document.querySelector("#generate");
 
-function generatePassword() {
-  generateBtn.addEventListener("click", function() {
-    const passwordLength = prompt("How many characters do you want in your password?");
-    if (passwordLength < 8 || passwordLength > 128) {
-      alert("Password length must be at least 8 characters and no more than 128 characters.")
-    } else {
-      const lowerCase = confirm("Click OK if you want your password to include lowercase characters.");
-      const upperCase = confirm("Click OK if you want your password to include uppercase characters.")
-      const numbers = confirm("Click OK if you want your password to include numbers.")
-      const symbols = confirm("Click OK if you want your password to include special characters.")
-      if (lowerCase == false && upperCase == false && numbers == false && symbols == false) {
-        alert("You must select at least one character type.");
-    } else {
-
-    }
-    
-
-    }
-    })
-
-
-
-
-  return "Generated password will go here."
-}
-
-
-
-
-// Write password to the #password input
-function writePassword() {
-  const password = generatePassword();
-  const passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
+var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
 
+function writePassword() {
+  var allPrompts = prompts();
+  if (allPrompts) {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+  } else {
+    passwordText.value = "";
+  }
+}
 
 
+function generatePassword() {
+  var password = "";
+  for(var i = 0; i < passwordLength; i++) {
+    var randomPass = Math.floor(Math.random() * combinedArrays.length);
+    password = password + combinedArrays[randomPass];
+  }
+  return password;
+}
 
 
-
-
-// const length = ["8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128"];
-
-// const arrays = [
-//   ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-//   ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
-//   ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
-//   ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"],
-// ];
-
+function prompts() {
+  combinedArrays = [];
+  passwordLength = parseInt(prompt("How many characters do you want in your password?"));
+  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+        alert("Please choose a number from 8 to 128 characters long.");
+        return false;
+  }
+  if (confirm("Click OK if you want your password to include numbers.")) {
+    combinedArrays = combinedArrays.concat(digits);
+  }
+  if (confirm("Click OK if you want your password to include lowercase letters.")) {
+    combinedArrays = combinedArrays.concat(lower);
+  }
+  if (confirm("Click OK if you want your password to include uppercase letters.")) {
+    combinedArrays = combinedArrays.concat(upper);
+  }
+  if (confirm("Click OK if you want your password to include special characters.")) {
+    combinedArrays = combinedArrays.concat(special);
+  }
+    return true;
+}
