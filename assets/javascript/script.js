@@ -1,3 +1,5 @@
+// Global variables
+
 var passwordLength = 8;
 var combinedArrays = []
 
@@ -9,8 +11,14 @@ const upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 
 const special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 
+
+// Selects generate button and listens for the mouse to click it
+
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
+
+
+// Prompts for the user to answer about their desired password
 
 function prompts() {
   passwordLength = prompt("How many characters do you want in your password?");
@@ -37,11 +45,14 @@ function prompts() {
   }
 
   if (combinedArrays.length === 0) {
-      alert("Please select at least one criteria for your password.");
+      alert("Please select at least one character type for your password.");
       return false;
   }
   return true;
 }
+
+
+// Combines user input, option arrays, and random function to generate a password
 
 function generatePassword() {
   var password = "";
@@ -51,6 +62,9 @@ function generatePassword() {
   }
   return password;
 }
+
+
+// Writes the generated password to the password text area
 
 function writePassword() {
   var answeredPrompts = prompts();
