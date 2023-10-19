@@ -23,10 +23,10 @@ generateBtn.addEventListener("click", writePassword);
 function prompts() {
   passwordLength = prompt("How many characters do you want in your password?");
   
-  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
-      alert("Password must contain at least 8 characters and no more than 128 characters. Please try again.");
-      return false;
-  }
+  if (passwordLength == null || isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    alert("Password must contain at least 8 characters and no more than 128 characters. Please try again.");
+    return false;
+}
 // Asks user if he/she wants to include a number in the password. If so, it will add digits to the combined array without affecting the rest of the array.
   if (confirm("Click OK if you want your password to include numbers.")) {
       combinedArrays = combinedArrays.concat(digits);
