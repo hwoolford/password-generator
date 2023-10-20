@@ -27,9 +27,9 @@ The second gif shows the alerts users receive when they either do not enter a pa
 
 ### Links
 
-- [Deployed Website](https://hwoolford.github.io/password-generator/){:target="_blank"}
+- [Deployed Website](https://hwoolford.github.io/password-generator/)
 
-- [GitHub Repository](https://github.com/hwoolford/password-generator){:target="_blank"}
+- [GitHub Repository](https://github.com/hwoolford/password-generator)
 
 ### Resources & Acknowledgements
 
