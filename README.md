@@ -10,11 +10,11 @@ Users click the "Generate Password" button to receive prompts for their password
 
 The first gif shows the functionality of the generator. 
 
-![Password Generator Functionality](./assets/images/pwgenerator1HQ.gif)
+![Password Generator Functionality](./assets/images/passgen1.gif)
 
 The second gif shows the alerts users receive when they either do not enter a password length of at least 8 characters and no more than 128 characters, or when they do not include at least one character type in the password.
 
-![Password Generator with alerts](./assets/images/pwgenerator2HQ.gif)
+![Password Generator with alerts](./assets/images/passgen2.gif)
 
 
 ### Installation
