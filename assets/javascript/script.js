@@ -23,24 +23,29 @@ generateBtn.addEventListener("click", writePassword);
 function prompts() {
   passwordLength = prompt("How many characters do you want in your password?");
   
-  if (passwordLength == null || isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
-    alert("Password must contain at least 8 characters and no more than 128 characters. Please try again.");
-    return false;
+if (passwordLength == "" || isNaN(passwordLength)) {
+      alert("Please enter a number for your password length.");
+  return false;
+}
+
+if (passwordLength < 8 || passwordLength > 128) {
+      alert("Password length must be at least 8 characters and no more than 128 characters. Please try again.");
+  return false;
 }
 // Asks user if he/she wants to include a number in the password. If so, it will add digits to the combined array without affecting the rest of the array.
-  if (confirm("Click OK if you want your password to include numbers.")) {
+  if (confirm("Click OK if you want your password to include numbers. Otherwise, click Cancel.")) {
       combinedArrays = combinedArrays.concat(digits);
   }
 // Asks user if he/she wants to include lowercase letters in the password. If so, it will add lowercase letters to the combined array without affecting the rest of the array.
-  if (confirm("Click OK if you want your password to include lowercase letters.")) {
+  if (confirm("Click OK if you want your password to include lowercase letters. Otherwise, click Cancel.")) {
       combinedArrays = combinedArrays.concat(lower);
   }
 // Asks user if he/she wants to include uppercase letters in the password. If so, it will add uppercase letters to the combined array without affecting the rest of the array.
-  if (confirm("Click OK if you want your password to include uppercase letters.")) {
+  if (confirm("Click OK if you want your password to include uppercase letters. Otherwise, click Cancel.")) {
       combinedArrays = combinedArrays.concat(upper);
   }
 // Asks user if he/she wants to include special characters in the password. If so, it will add special characters to the combined array without affecting the rest of the array.
-  if (confirm("Click OK if you want your password to include special characters.")) {
+  if (confirm("Click OK if you want your password to include special characters. Otherwise, click Cancel.")) {
       combinedArrays = combinedArrays.concat(special);
   }
 // Verifies that at least one character type was selected.
