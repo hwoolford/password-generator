@@ -21,6 +21,7 @@ generateBtn.addEventListener("click", writePassword);
 
 // Sets password length and then verifies that a number was entered and that the number is >= 8 and <= 128
 function prompts() {
+  combinedArrays = [];
   passwordLength = prompt("How many characters do you want in your password?");
   if (passwordLength == "" || isNaN(passwordLength)) {
       alert("Please enter a number for your password length.");
